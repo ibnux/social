@@ -23,7 +23,7 @@
                             </p>
                         </div>
                         <footer class="card-footer">
-                            <a href="ibnux://login" class="card-footer-item">OPEN iBNuX</a>
+                            <a href="ibnux://login" id="button" class="card-footer-item">OPEN iBNuX</a>
                         </footer>
                     </div>
                 </div>
@@ -34,6 +34,13 @@
 
         </div>
     </section>
+    <iframe id="iframe" style="display: none;"></iframe>
 </body>
 
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('button').href = "ibnux://login/"+urlParams.get('code');
+    document.getElementById('iframe').src = "ibnux://login/"+urlParams.get('code');
+
+</script>
 </html>
